@@ -1,0 +1,22 @@
+{
+    "name": "webpay-webserviceAPI",
+    "version": "1.0.0",
+    "description": "A Nodejs wrapper for the Webpay Webservice API",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "webpay",
+        "wts",
+        "webservice",
+        "api",
+        "fis"
+    ],
+    "author": "Mark Moffat <mrvautin@gmail.com> (https://mrvautin.com)",
+    "license": "ISC",
+    "dependencies": {
+        "request": "^2.72.0",
+        "xml2js": "^0.4.16"
+    }
+}
