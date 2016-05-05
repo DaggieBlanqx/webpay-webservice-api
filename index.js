@@ -14,7 +14,7 @@ module.exports = {
                 <clientid>` + txn.clientID + `</clientid>
                 <authenticationtoken>` + txn.authToken + `</authenticationtoken>
                 <carddata>` + txn.cardNumber + `</carddata>
-                <cardexpirydate>` + txn.expMonth + txn.expYear + `</cardexpirydate>
+                <cardexpirydate>` + txn.expiryMonth + checkExpiryYear(txn.expiryYear) + `</cardexpirydate>
                 <cvc2>` + txn.cvc + `</cvc2>
                 <totalamount>` + txn.amount + `</totalamount>
             </transaction>`;
@@ -22,8 +22,8 @@ module.exports = {
         // set the correct URL 
         var gw_url = gateway_url;
         var gw_url_split = gw_url.split("/");
-        if(options.debug){
-            if(options.debug == true){
+        if(options.test_mode){
+            if(options.test_mode == true){
                 gateway_url = gw_url_split.slice(0, gw_url_split.length - 1).join("/") + "/testtransaction";
             }else{
                 gateway_url = gw_url_split.slice(0, gw_url_split.length - 1).join("/") + "/transaction";
@@ -58,3 +58,21 @@ module.exports = {
         });
     }
 };
+
+function checkExpiryYear(expiryYear){
+    if(expiryYear){
+        // 2 digits which is the correct length, return as is
+        if(expiryYear.toString().length == 2){
+            return expiryYear;
+        }
+        // more than 2 digits, we want two so we grab the last 2 digits
+        if(expiryYear.toString().length > 2){
+            return expiryYear.toString().substr(expiryYear.toString().length - 2);
+        }
+        
+        // who knows, just return it and see how we go
+        return expiryYear;
+    }else{
+        return '00';
+    }
+}
