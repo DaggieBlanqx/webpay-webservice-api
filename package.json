@@ -1,7 +1,7 @@
 {
-    "name": "webpay-webserviceAPI",
-    "version": "1.0.0",
-    "description": "A Nodejs wrapper for the Webpay payment gateway WebserviceAPI",
+    "name": "webpay-webservice-api",
+    "version": "1.0.1",
+    "description": "A Nodejs wrapper for the Webpay payment gateway Webservice API",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,10 +17,18 @@
         "merchant",
         "transaction",
         "credit card",
-        "stgeorge"
+        "stgeorge",
+        "ecommerce"
     ],
     "author": "Mark Moffat <mrvautin@gmail.com> (https://mrvautin.com)",
-    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mrvautin/webpay-webservice-api.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mrvautin/webpay-webservice-api/issues"
+    },
+    "license": "MIT",
     "dependencies": {
         "request": "^2.72.0",
         "xml2js": "^0.4.16"

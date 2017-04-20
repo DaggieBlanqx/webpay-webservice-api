@@ -1,17 +1,17 @@
-# webpay-webserviceAPI
+# webpay-webservice-api
 
 A Node.js module to process merchant credit card transactions to the Webpay transaction server (WTS) via the WebServiceAPI.
 
 ## Installation
 
 ```
-npm install webpay-webserviceAPI --save
+npm install webpay-webservice-api --save
 ```
 
 ## Usage
 
 ``` javascript
-var webpay = require('webpay-webserviceAPI');
+var webpay = require('webpay-webservice-api');
 
 // set the transaction data
 var transaction = {
@@ -61,4 +61,4 @@ var options = {
 
 ## License
 
-[The MIT License](https://github.com/mrvautin/webpay-webserviceAPI/tree/master/LICENSE)
+[The MIT License](https://github.com/mrvautin/webpay-webservice-api/tree/master/LICENSE)
